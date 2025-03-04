@@ -1,0 +1,73 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[6]:
+
+
+import numpy as np
+# first task
+student = np.array((
+    [54,56,67],
+    [34,45,67],
+    [56,67,89],
+    [34,78,90],
+    [56,78,97]))
+
+
+print("the student score is: \n",student)
+
+
+# In[7]:
+
+
+# secound task 
+three_student_score = student[:3, :]
+print(three_student_score)
+
+
+# In[14]:
+
+
+# therd task 
+higest_score = np.max(student)
+print(higest_score)
+
+
+# In[15]:
+
+
+# fourth task
+lowest_score = np.min(student[:,2])
+print(lowest_score)
+
+
+# In[17]:
+
+
+higest_first_three_student = np.max(three_student_score)
+print(higest_first_three_student)
+
+
+# In[19]:
+
+
+np.savetxt('quiz_score.txt',
+          student,
+          fmt='%2f',
+           delimiter=',',
+          header='quiz_score',
+          comments='')
+
+
+# In[25]:
+
+
+quiz_score = np.genfromtxt('quiz_score.txt',delimiter=',' ,skip_header = 1)
+quiz_score
+
+
+# In[ ]:
+
+
+
+
